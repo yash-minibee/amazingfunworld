@@ -1,0 +1,743 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rides | ThrillQuest Amusement Parks</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Atma:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiary: "#ab0b1c",
+              "inverse-primary": "#b4c5ff",
+              "on-primary": "#ffffff",
+              "on-error": "#ffffff",
+              "surface-tint": "#0053db",
+              "on-primary-container": "#eeefff",
+              "surface-container-low": "#f2f3ff",
+              "secondary-fixed": "#ffdbca",
+              "surface-container-lowest": "#ffffff",
+              "secondary-container": "#fd761a",
+              "surface-variant": "#dae2fd",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "surface-dim": "#d2d9f4",
+              "on-secondary-fixed-variant": "#783200",
+              "on-secondary-container": "#5c2400",
+              "on-tertiary-fixed-variant": "#930013",
+              "primary-fixed-dim": "#b4c5ff",
+              "action-yellow": "#FACC15",
+              "tertiary-container": "#cf2c30",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#341100",
+              "on-tertiary-fixed": "#410004",
+              "on-tertiary-container": "#ffecea",
+              primary: "#004ac6",
+              "on-secondary": "#ffffff",
+              "surface-soft": "#F8FAFC",
+              "inverse-surface": "#283044",
+              "inverse-on-surface": "#eef0ff",
+              secondary: "#9d4300",
+              "outline-variant": "#c3c6d7",
+              "surface-container-high": "#e2e7ff",
+              "primary-fixed": "#dbe1ff",
+              "surface-container-highest": "#dae2fd",
+              "on-surface": "#131b2e",
+              error: "#ba1a1a",
+              "on-primary-fixed-variant": "#003ea8",
+              outline: "#737686",
+              "tertiary-fixed": "#ffdad7",
+              surface: "#faf8ff",
+              "surface-bright": "#faf8ff",
+              "on-surface-variant": "#434655",
+              "on-background": "#131b2e",
+              "secondary-fixed-dim": "#ffb690",
+              "surface-container": "#eaedff",
+              "on-primary-fixed": "#00174b",
+              "primary-container": "#2563eb",
+              "error-container": "#ffdad6",
+              background: "#faf8ff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-gap-mobile": "64px",
+              "container-max": "1280px",
+              base: "8px",
+              gutter: "24px",
+              "section-gap-desktop": "120px",
+            },
+            fontFamily: {
+              "headline-xl-mobile": ["Plus Jakarta Sans"],
+              "headline-xl": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "headline-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+              "label-md": ["Plus Jakarta Sans"],
+              "display-lg": ["Plus Jakarta Sans"],
+              cursive: ["Atma"],
+            },
+            fontSize: {
+              "headline-xl-mobile": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "56px",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                { lineHeight: "40px", fontWeight: "700" },
+              ],
+              "headline-md": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "20px",
+                  letterSpacing: "0.05em",
+                  fontWeight: "600",
+                },
+              ],
+              "display-lg": [
+                "72px",
+                {
+                  lineHeight: "80px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .ride-card-hover:hover .ride-image {
+        transform: scale(1.1);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4"
+    >
+      <div
+        class="flex justify-between items-center max-w-container-max mx-auto gap-4"
+      >
+        <!-- Logo Pill -->
+        <a href="index.html"
+          class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-6 py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
+          <img alt="ThrillQuest Logo" class="h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLu8tEOHoCUoBoTONbVcQzWKEN5SVUZwZOs1swRl_RPrluk2O8lNLafoA7GXPuR5ZYIkilfpNsXRnAh81kch1SXsw9M1yaixLNtrur88yadIsCMV8KBFfrihAGkC0VfJz9YkhOBQiWFBoTf4vB0SdcEb2MF0kLu4sbpmMGb37nq70haP6bodB69KHpQoWa5Xcc4yR6tNBNrENE791L8UwhzOMnsaYiYHhjUuZ62lGqvqwxSmW1LTXjukKg" />
+          <span class="font-headline-md text-xl font-bold text-primary hidden md:block">ThrillQuest</span>
+        </a>
+
+        <!-- Links Pill -->
+        <div
+          class="hidden md:flex items-center gap-6 bg-white/20 backdrop-blur-lg border border-white/20 px-8 py-3 rounded-full shadow-sm font-label-md text-xs uppercase tracking-wider">
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="index.html">Home</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="about.html">About Us</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="theme.html">Themes</a>
+          <a class="text-primary font-bold" href="rides.html">Rides</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="room.html">Rooms</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="contact.html">Contact</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="booking.html">Booking Now</a>
+        </div>
+
+        <!-- CTA Pill -->
+        <div
+          class="flex items-center gap-2 bg-white/20 backdrop-blur-lg border border-white/20 p-1.5 rounded-full shadow-sm">
+          <button
+            class="hidden lg:block px-4 text-on-surface-variant font-label-md hover:text-primary transition-colors font-bold text-xs uppercase">
+            Login
+          </button>
+          <a href="booking.html"
+            class="bg-secondary-container hover:bg-secondary text-white px-6 py-2 rounded-full font-label-md text-xs uppercase font-bold shadow-lg active:scale-95 transition-all text-center">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </nav>
+    <main class="">
+      <!-- Hero Section -->
+      <section
+        class="relative h-[100vh] w-full flex items-center justify-center overflow-hidden"
+      >
+        <div class="absolute inset-0 z-0">
+          <img
+            alt="Hero Ride"
+            class="w-full h-full object-cover brightness-[0.7]"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLu1g6L3jQ0Uy84IFpc24boZkCyGW_CeBcD1ZwT5Oi0ZFlweBGBco45v31pSj8KarqSEwWNTvqsPE-2cpx89sMbTIKN6XldxfQd7fDc8DvYXje7gSIE4-3PwbQzwTzdJPHNscsxS-WnUFvUN0HwhbvQ-7YTPwqIJXiB33nKpnwpZSsWb6bg_LRxNv_u-888noBoWHGOhWuQVxluz2D2XNOfa0qbN5hhIHb9Fex-gBHjXbo1LW06EC_LdAA"
+          />
+        </div>
+        <div class="relative z-10 pt-14 text-center px-gutter max-w-4xl">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-label-md mb-3 uppercase tracking-wider animate-bounce"
+            >New for 2024</span
+          >
+          <h1
+            class="font-cursive text-7xl md:text-9xl text-white drop-shadow-2xl mb-4 leading-tight"
+          >
+            Thrilling Rides &amp; Attractions
+          </h1>
+          <p
+            class="text-white font-body-lg text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md mb-10"
+          >
+            From gravity-defying coasters to magical family journeys, discover
+            the pulse-pounding excitement waiting for you at ThrillQuest.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              class="bg-primary text-on-primary px-8 py-4 rounded-full font-label-md text-lg hover:scale-105 transition-transform shadow-lg flex items-center gap-2"
+              href="#ride-grid"
+            >
+              <span class="material-symbols-outlined">explore</span> Explore All
+              Rides
+            </a>
+            <a
+              class="bg-white/20 backdrop-blur-md text-white border border-white/30 px-8 py-4 rounded-full font-label-md text-lg hover:bg-white/30 transition-all"
+              href="#"
+            >
+              Park Map
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Quick Filters -->
+      <section class="bg-surface-container-low py-12">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="flex flex-wrap items-center justify-between gap-6">
+            <h2 class="font-headline-lg text-on-surface font-cursive">
+              Filter Your Adventure
+            </h2>
+            <div class="flex flex-wrap gap-3">
+              <button
+                class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md flex items-center gap-2"
+              >
+                All Rides
+              </button>
+              <button
+                class="bg-white text-on-surface-variant border border-outline-variant px-6 py-2 rounded-full font-label-md hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >rocket_launch</span
+                >
+                Thrill Seekers
+              </button>
+              <button
+                class="bg-white text-on-surface-variant border border-outline-variant px-6 py-2 rounded-full font-label-md hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >family_restroom</span
+                >
+                Family Fun
+              </button>
+              <button
+                class="bg-white text-on-surface-variant border border-outline-variant px-6 py-2 rounded-full font-label-md hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >child_care</span
+                >
+                Kiddie Rides
+              </button>
+              <button
+                class="bg-white text-on-surface-variant border border-outline-variant px-6 py-2 rounded-full font-label-md hover:border-primary hover:text-primary transition-all flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >water_drop</span
+                >
+                Water Rides
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Main Ride Grid (Bento Style) -->
+      <section
+        class="py-section-gap-desktop max-w-container-max mx-auto px-gutter"
+        id="ride-grid"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Octopus -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Octopus Ride"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9L8SXvP67kbVqmG0cporYrr5M9EPcC1yHyoYKDCXVt9k_MGclZS_mrh9k4AMvkpkcTwlsqXbzmno7IteSfhyXQw5RCJvhNXf7nztaENFMtVCr8u3hrpm421Y91ygFYkyW_2dwn54MwVGckGePTJDsKjW91tJp3cpIAOBM_HrvnqpaZ-n4xprGmIisZXgmwrVBWU-6KxI930YmuViOTG1WAAIOvNN5M00pjEBZXJXblKPpKhPCb85nVDFwzoU2dGlF"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-primary">
+                OCTOPUS
+              </h4>
+            </div>
+          </div>
+          <!-- Big Pendulum -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Big Pendulum"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEIjfto4alhEcg8Tiiccaajmh9XhpFGsGZuQvjIjDcVt2T-nW2T3OiGV9NDHShPqBMmd1wzrz2QfNrRTUH2_ltgbsDBCypGD_3QendbZm-lILZ1miUreZooYBTnu2xDLK6uOCrIFIApeju9CytQv0IS5BXgwZ8Yv6cZgnf6Z4wwDGTpDjFSNdDZuOfcQyWshh7RlwcMvXvWrTaQNN215EPX4SInBo5GP74R0pEi-gvgGHcB64em3zL51hx1XN_Pja9"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-tertiary">
+                BIG PENDULUM
+              </h4>
+            </div>
+          </div>
+          <!-- Repeal Fare -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Repeal Fare"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHPilfTIKFcS3ykmchQdl1qmde-uFyPvc6gXXAaoXtzneg12LV_XxZ32RnbL00AWikVIuVgJ0qJ67Q5RmgC3D4DqzGIRzqCfpn7J902NAa0y9lcMOr4iZGXcVGyMovP0-uVSjcYdgekk4Ul1CMJMrT803NGLyCSTNvb-ZN6nzlBabQl_hV16VFXV18Z4J51G7juqe-5KSjRnZNnzv29YWFUsoNCKECAURh_vB2s3ihWJC8JuHRUp2Et8lDn6bMDos6"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-primary">
+                REPEAL FARE
+              </h4>
+            </div>
+          </div>
+          <!-- Top Spring -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Top Spring"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKqKtl6vJjZhpfkoRvTjqP62BM41TgUV6PfrJO0K-x8WuAAbbQWpUh_B4QQm7kH082mchS7Vimev3wNKkFgrBYAi2lMFeIlFUiDaoILhi6W8b7zlEIudQUhA3rq0gCPgvARgkvpkeW6wawhZqI_710FQM4Ya8cwU16os0f0wX_RrUSxkTifuH51i1WPQs_Rsg26MVzzXtaUZEiLvB_Z_5L2d5gyFVTjQEb-RloFvCrWK2Py-SIA87GoK4W-dVilN4W"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-secondary">
+                TOP SPRING
+              </h4>
+            </div>
+          </div>
+          <!-- Flying Chair -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Flying Chair"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR9ulpNcQCdM6bEYnP6QUKlRuN5coceQA-OTeDlY1t4C05vwaGvFTF4LpHWEw8yaSzY_BdvcEbnQNFm9VCAV3cnUUBiuO6oN-53oPOPue3ZkoPPwyEwH8MHc7NtQgqo8y1l0oDojOxCP32FgJjqNiOdhs6i6h3VdyUzLznvIZAQ2Rk1Apx6ba4aUOmiS_RV3XGPcN-Rw00wRE_DZ8pnDeFFMZQFpvObPZMULFqr4eMyfGA8I1zyv7KV6Y_3x72FdA8"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-primary">
+                FLYING CHAIR
+              </h4>
+            </div>
+          </div>
+          <!-- Surfer Ride -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Surfer Ride"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL76oNqyigXyLeEl-h0dPQDHML_kC7zyDKfAgxO8VEeP2EzDjk1zDzVez02RWLkwvxZb8vtaPQQ72AAq_RsXGLdCrovi-t2VCgdkZwvEC_6jge564wtQs25IFZMnZ0OhYCXOKq7ckSy17nrpD8B33gVAPBBacJqGm3mQgUGSojU4M3oBvYlSPMqxxPn860m5XtLHKQxPQnqaoTWVk1Xp42xQbVzteabdmU5Pca3CyHC8HcaR1EIa4YgDBgNk5PV82B"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-tertiary">
+                SURFER RIDE
+              </h4>
+            </div>
+          </div>
+          <!-- Dressing Car -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Dressing Car"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpK14Sv8Vix8bNNzCbLhDFIOZhONySHt8F3xjAbPywh0iRP_loFm9puqYfyZxKGmkwnvedQBxiZCUAcBceeosC_yG4aisCS9uaIDiPwaxUW39BZwalJ1hzYsoP66iWzqllK8f6Ny4I0It8niMscRYeWyDAQmhtHhes8sEaB2DvN8MMxgD2JNmZvwTeHASoNsPqGYhX-7Q_u17gu6u9ALR4mLuQn2gFNQU1JOEXW_qgPZh2QYVVUpaARGZ1HJFP2An-"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-primary">
+                DRESSING CAR
+              </h4>
+            </div>
+          </div>
+          <!-- Bouncy -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Bouncy"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUpJ57I7pQLWRSBDE8fWdtuIEBS4Hm8AVQiHyMfugKaCwhCjBH8ZgpIbkcn-jhKrJDlRKiM_rbFZh_X4l_vM1hXFvMAUSGgozh6a2fFiA-hIlQTyO9AB6spCjbLdwpENUXLP-7sEZm6wSF07yzAthrhf5jdZldoqjJDCZBmV8dCkZMFvCIdybxotjYg9WlX3PSobJEB-pcX-sbev4IbZ3par29zXrmTNv8fqJiSqTYH6CajHmazsT2ld4iznjtjG8h"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-secondary">
+                BOUNCY
+              </h4>
+            </div>
+          </div>
+          <!-- Trampoline -->
+          <div
+            class="group bg-white rounded-[24px] shadow-sm border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300"
+          >
+            <div class="h-64 overflow-hidden">
+              <img
+                alt="Trampoline"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvoaFb_bwi0G_MSsVwyNX4KxoDiH2A_DPkuNzya-PtNkH0KlvzWlgdpQyntqnsTfyQB5hUvRZR-gEAf4TOf4sYKji9tu92S1EII7kM3HbQGt7oCKCE4868xi_ZEPuaTlPPCQ1Kp_HHekWebpLhSV2lfbtahmh2435vghRTZnTvJAQMR8SzCpozNKw8o1V9QJWwMmAW9_ht9zYLX5T_ynR93wUBH2Qd6eeCSb3Hs8CkAwxOFnyqh0EX8M24SgOBj1Bc"
+              />
+            </div>
+            <div class="p-6 text-center">
+              <h4 class="font-cursive text-headline-md text-primary">
+                TRAMPOLINE - FIRST IN GUJARAT
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="bg-inverse-surface py-20 overflow-hidden relative">
+        <div class="max-w-container-max mx-auto px-gutter relative z-10">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div>
+              <div
+                class="text-secondary font-display-lg text-5xl md:text-7xl mb-2"
+              >
+                45+
+              </div>
+              <div
+                class="text-white/60 font-label-md uppercase tracking-widest"
+              >
+                Amazing Rides
+              </div>
+            </div>
+            <div>
+              <div
+                class="text-secondary font-display-lg text-5xl md:text-7xl mb-2"
+              >
+                12
+              </div>
+              <div
+                class="text-white/60 font-label-md uppercase tracking-widest"
+              >
+                Thrill Coasters
+              </div>
+            </div>
+            <div>
+              <div
+                class="text-secondary font-display-lg text-5xl md:text-7xl mb-2"
+              >
+                5
+              </div>
+              <div
+                class="text-white/60 font-label-md uppercase tracking-widest"
+              >
+                Themed Zones
+              </div>
+            </div>
+            <div>
+              <div
+                class="text-secondary font-display-lg text-5xl md:text-7xl mb-2"
+              >
+                100%
+              </div>
+              <div
+                class="text-white/60 font-label-md uppercase tracking-widest"
+              >
+                Fun Guaranteed
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Decorative circle -->
+        <div
+          class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"
+        ></div>
+      </section>
+      <!-- Bottom CTA -->
+      <section class="py-section-gap-desktop bg-surface">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div
+            class="bg-primary rounded-[40px] p-12 md:p-20 text-center relative overflow-hidden"
+          >
+            <div class="relative z-10 max-w-3xl mx-auto">
+              <h2 class="font-headline-xl text-white mb-6">
+                Ready to Feel the Rush?
+              </h2>
+              <p class="text-white/80 font-body-lg mb-10 text-xl">
+                Buy your tickets online now and save up to 20% on gate prices.
+                Skip the queues and head straight to the thrills!
+              </p>
+              <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a
+                  href="booking.html"
+                  class="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:bg-primary-fixed transition-all shadow-xl text-center block"
+                >
+                  Get Tickets Now
+                </a>
+                <a
+                  href="booking.html"
+                  class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all text-center block"
+                >
+                  Season Passes
+                </a>
+              </div>
+            </div>
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+              <svg
+                height="100%"
+                preserveaspectratio="none"
+                viewbox="0 0 100 100"
+                width="100%"
+              >
+                <path
+                  d="M0 50 Q 25 0 50 50 T 100 50"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                ></path>
+                <path
+                  d="M0 60 Q 25 10 50 60 T 100 60"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                ></path>
+                <path
+                  d="M0 40 Q 25 -10 50 40 T 100 40"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  vector-effect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/10"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter py-section-gap-desktop max-w-container-max mx-auto"
+      >
+        <div class="md:col-span-1">
+          <a
+            href="index.html"
+            class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed mb-6 block hover:scale-105 transition-transform duration-200"
+          >
+            ThrillQuest
+          </a>
+          <p class="text-on-surface-variant mb-6 font-body-md">
+            Creating memories that last a lifetime since 1995. The world's most
+            innovative theme park destination.
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-sm">share</span></a
+            >
+            <a
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-sm"
+                >campaign</span
+              ></a
+            >
+            <a
+              class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+              href="#"
+              ><span class="material-symbols-outlined text-sm"
+                >thumb_up</span
+              ></a
+            >
+          </div>
+        </div>
+        <div>
+          <h5 class="font-bold text-on-surface mb-6">Explore</h5>
+          <ul class="space-y-4 font-body-md text-on-surface-variant">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Our Rides</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Themed Zones</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Dining &amp; Shopping</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Events Calendar</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-on-surface mb-6">Plan Your Visit</h5>
+          <ul class="space-y-4 font-body-md text-on-surface-variant">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Park Hours</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Directions &amp; Parking</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Guest Services</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Safety Guide</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-on-surface mb-6">Support</h5>
+          <ul class="space-y-4 font-body-md text-on-surface-variant">
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Terms of Service</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Accessibility</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-primary transition-colors" href="#"
+                >Career</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-outline-variant/10 py-8 px-gutter">
+        <div
+          class="max-w-container-max mx-auto flex flex-col md:row justify-between items-center gap-4 text-on-surface-variant font-body-md text-sm"
+        >
+          <p>© 2024 ThrillQuest Amusement Parks. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a class="hover:text-primary" href="contact.html">Contact Us</a>
+            <a class="hover:text-primary" href="#">Press Room</a>
+            <a class="hover:text-primary" href="#">Investors</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Simple scroll reveal effect for cards
+      document.addEventListener("DOMContentLoaded", () => {
+        const observerOptions = {
+          threshold: 0.1,
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("opacity-100", "translate-y-0");
+              entry.target.classList.remove("opacity-0", "translate-y-10");
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll("#ride-grid > div").forEach((card) => {
+          card.classList.add(
+            "transition-all",
+            "duration-700",
+            "opacity-0",
+            "translate-y-10",
+          );
+          observer.observe(card);
+        });
+      });
+    </script>
+  </body>
+</html>

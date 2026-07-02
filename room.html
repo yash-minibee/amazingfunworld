@@ -1,0 +1,668 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Luxury Stays at ThrillQuest | Premium Accommodations</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Atma:wght@500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet" />
+  <!-- Tailwind Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#004ac6",
+            "surface-container": "#eaedff",
+            background: "#faf8ff",
+            "surface-bright": "#faf8ff",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "inverse-primary": "#b4c5ff",
+            "secondary-fixed-dim": "#ffb690",
+            "surface-container-high": "#e2e7ff",
+            surface: "#faf8ff",
+            "outline-variant": "#c3c6d7",
+            "secondary-container": "#fd761a",
+            "on-surface-variant": "#434655",
+            "on-background": "#131b2e",
+            tertiary: "#ab0b1c",
+            secondary: "#9d4300",
+            "primary-fixed-dim": "#b4c5ff",
+            "primary-container": "#2563eb",
+            "tertiary-container": "#cf2c30",
+            "inverse-surface": "#283044",
+            "on-secondary-fixed": "#341100",
+            "on-secondary-container": "#5c2400",
+            "surface-soft": "#F8FAFC",
+            outline: "#737686",
+            "on-tertiary-fixed-variant": "#930013",
+            "surface-variant": "#dae2fd",
+            "surface-tint": "#0053db",
+            "secondary-fixed": "#ffdbca",
+            error: "#ba1a1a",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed": "#410004",
+            "on-primary-container": "#eeefff",
+            "surface-container-highest": "#dae2fd",
+            "inverse-on-surface": "#eef0ff",
+            "on-primary-fixed-variant": "#003ea8",
+            "surface-container-low": "#f2f3ff",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#ffecea",
+            "action-yellow": "#FACC15",
+            "on-surface": "#131b2e",
+            "on-secondary-fixed-variant": "#783200",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#00174b",
+            "surface-dim": "#d2d9f4",
+            "primary-fixed": "#dbe1ff",
+            "tertiary-fixed": "#ffdad7",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+          spacing: {
+            "section-gap-desktop": "120px",
+            "section-gap-mobile": "64px",
+            base: "8px",
+            gutter: "24px",
+            "container-max": "1280px",
+          },
+          fontFamily: {
+            "headline-xl": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            fun: ["Atma", "cursive"],
+          },
+          fontSize: {
+            "headline-xl": [
+              "48px",
+              {
+                lineHeight: "56px",
+                letterSpacing: "-0.01em",
+                fontWeight: "700",
+              },
+            ],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "headline-lg": [
+              "32px",
+              { lineHeight: "40px", fontWeight: "700" },
+            ],
+            "label-md": [
+              "14px",
+              {
+                lineHeight: "20px",
+                letterSpacing: "0.05em",
+                fontWeight: "600",
+              },
+            ],
+            "headline-xl-mobile": [
+              "32px",
+              { lineHeight: "40px", fontWeight: "700" },
+            ],
+            "headline-md": [
+              "24px",
+              { lineHeight: "32px", fontWeight: "600" },
+            ],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "display-lg": [
+              "72px",
+              {
+                lineHeight: "80px",
+                letterSpacing: "-0.02em",
+                fontWeight: "800",
+              },
+            ],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(to bottom,
+          rgba(0, 0, 0, 0.1),
+          rgba(0, 0, 0, 0.6));
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hover-lift {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .glass-nav {
+      background: rgba(250, 248, 255, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+  <!-- TopNavBar -->
+  <nav class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4">
+    <div class="flex justify-between items-center max-w-container-max mx-auto gap-4">
+      <!-- Logo Pill -->
+      <a href="index.html"
+        class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-6 py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
+        <img alt="ThrillQuest Logo" class="h-8 w-auto object-contain"
+          src="https://lh3.googleusercontent.com/aida/AP1WRLu8tEOHoCUoBoTONbVcQzWKEN5SVUZwZOs1swRl_RPrluk2O8lNLafoA7GXPuR5ZYIkilfpNsXRnAh81kch1SXsw9M1yaixLNtrur88yadIsCMV8KBFfrihAGkC0VfJz9YkhOBQiWFBoTf4vB0SdcEb2MF0kLu4sbpmMGb37nq70haP6bodB69KHpQoWa5Xcc4yR6tNBNrENE791L8UwhzOMnsaYiYHhjUuZ62lGqvqwxSmW1LTXjukKg" />
+        <span class="font-headline-md text-xl font-bold text-primary hidden md:block">ThrillQuest</span>
+      </a>
+
+      <!-- Links Pill -->
+      <div
+        class="hidden md:flex items-center gap-6 bg-white/20 backdrop-blur-lg border border-white/20 px-8 py-3 rounded-full shadow-sm font-label-md text-xs uppercase tracking-wider">
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="about.html">About Us</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="theme.html">Themes</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="rides.html">Rides</a>
+        <a class="text-primary font-bold" href="room.html">Rooms</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold"
+          href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="booking.html">Booking
+          Now</a>
+      </div>
+
+      <!-- CTA Pill -->
+      <div
+        class="flex items-center gap-2 bg-white/20 backdrop-blur-lg border border-white/20 p-1.5 rounded-full shadow-sm">
+        <button
+          class="hidden lg:block px-4 text-on-surface-variant font-label-md hover:text-primary transition-colors font-bold text-xs uppercase">
+          Login
+        </button>
+        <a href="booking.html"
+          class="bg-secondary-container hover:bg-secondary text-white px-6 py-2 rounded-full font-label-md text-xs uppercase font-bold shadow-lg active:scale-95 transition-all text-center">
+          Book Now
+        </a>
+      </div>
+    </div>
+  </nav>
+  <main class="">
+    <!-- Hero Section -->
+    <section class="relative h-[90vh] min-h-[500px] flex items-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+        <img alt="Luxury Hotel Room at ThrillQuest" class="w-full h-full object-cover"
+          src="https://lh3.googleusercontent.com/aida/AP1WRLttx6SjHm3aRcWdLG7FABdDrDl9eSWSVJ5ZeZ2hX2yjnXLrn3JEeL2wj-BmQQWPFlTArdDK0pYOZEz1v7fRPQ95DPfaTwQXOkVyJipfZvG0DTtnXEjcL6F5UlEYO1355jjWijXA0gSgPwYwjrMIV5YtUB5UraDnFBiJvbOkYft981PnpO9DghzM-oulVijbGuOp3oXcDsCR3zW13VXV8B1a6YbPAdvc1W4TBg0FSMJKV0BN-LOlonj5bQ" />
+        <div class="absolute inset-0 hero-gradient"></div>
+      </div>
+      <div class="relative z-10 max-w-container-max mx-auto px-gutter w-full">
+        <div class="max-w-2xl text-white">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-white font-label-md text-label-md mb-6 uppercase tracking-widest">Premium
+            Living</span>
+          <h1 class="font-fun text-display-lg leading-tight mb-6 drop-shadow-lg">
+            Luxury Stays at the Park
+          </h1>
+          <p class="font-body-lg text-body-lg mb-8 text-white/90 leading-relaxed max-w-lg">
+            Extend your adventure into the night. Relax in our premium
+            accommodations designed for ultimate comfort after a day of
+            high-octane thrills.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a class="bg-primary text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2 shadow-xl shadow-primary/20"
+              href="#booking">
+              <span class="material-symbols-outlined">hotel</span>
+              Book Your Stay
+            </a>
+            <button
+              class="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+              Take a 3D Tour
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Booking Widget (Conversion Focus) -->
+    <div class="max-w-container-max mx-auto px-gutter -mt-16 relative z-20" id="booking">
+      <div
+        class="bg-white rounded-2xl shadow-2xl p-6 lg:p-8 flex flex-col lg:flex-row items-center gap-6 border border-outline-variant/30">
+        <div class="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div class="space-y-1.5">
+            <label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary scale-90">calendar_today</span>
+              Check in
+            </label>
+            <input
+              class="w-full p-3 rounded-xl border border-outline-variant bg-surface-soft focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+              type="date" value="2026-07-02" />
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary scale-90">event_busy</span>
+              Check out
+            </label>
+            <input
+              class="w-full p-3 rounded-xl border border-outline-variant bg-surface-soft focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
+              type="date" value="2026-07-02" />
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary scale-90">group</span>
+              Guests
+            </label>
+            <select
+              class="w-full p-3 rounded-xl border border-outline-variant bg-surface-soft focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all appearance-none">
+              <option>2 Adults, 1 Child</option>
+              <option>1 Adult</option>
+              <option>2 Adults</option>
+              <option>4 Adults (Suite)</option>
+            </select>
+          </div>
+        </div>
+        <a href="booking.html"
+          class="w-full lg:w-auto px-12 py-5 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 flex items-center justify-center gap-2 min-w-[200px] text-center">
+          <span class="material-symbols-outlined">search</span>
+          Check Availability
+        </a>
+      </div>
+    </div>
+    <!-- Featured Room Detail -->
+    <section class="py-section-gap-desktop px-gutter max-w-container-max mx-auto">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-4 bg-primary/5 rounded-[2.5rem] -rotate-2 group-hover:rotate-0 transition-transform">
+          </div>
+          <div class="relative overflow-hidden rounded-[2rem] shadow-2xl">
+            <img class="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+              data-alt="A brightly lit, expansive modern hotel room with minimalist off-white interiors and floor-to-ceiling windows overlooking a vibrant amusement park. The room features a plush king-sized bed with teal accent pillows, two designer armchairs in a seating area, and warm ambient lighting. The atmosphere is sophisticated and airy, maintaining a high-end luxury resort feel consistent with a premium travel experience."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNJCRvB26jzagqMEFj5k0ged1bV6BQJjT8DSFEfw8_jTsLSPwprgh9Zwo2--8ENWzfr-l5Qw4J1t4GKPgFf3UiNQODvKlEmGWL4yG_Hqbg0Dm3Hz56pe9KBRQm_w8ceYoawKdarXxq_gJNLaDbG4_Y4QjKX2aksM7NN2_7MR3H1-_DP3LvY6MYP-YUKnAaRQ_PU2hvR3r3bZ_RwfsV87gDFuibO7neyaJs2bahJQiTJx0KkyBFZMU" />
+            <div class="absolute top-6 left-6 flex flex-col gap-2">
+              <span
+                class="bg-primary text-white px-4 py-1.5 rounded-full font-label-md text-label-md shadow-lg flex items-center gap-2">
+                <span class="material-symbols-outlined scale-75"
+                  style="font-variation-settings: &quot;FILL&quot; 1">star</span>
+                Top Rated
+              </span>
+              <span
+                class="bg-action-yellow text-on-background px-4 py-1.5 rounded-full font-label-md text-label-md shadow-lg flex items-center gap-2">
+                <span class="material-symbols-outlined scale-75">landscape</span>
+                Park Side View
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-8">
+          <div>
+            <h2 class="font-fun text-headline-xl text-primary mb-4">
+              Double Bed A/C Room
+            </h2>
+            <div class="flex items-end gap-3">
+              <span class="text-display-lg font-bold text-on-background leading-none tracking-tighter">$189</span>
+              <span class="text-body-lg text-on-surface-variant pb-2">/ night</span>
+            </div>
+          </div>
+          <p class="text-body-lg text-on-surface-variant leading-relaxed">
+            Experience perfect tranquility in our signature double room.
+            Featuring panoramic park views and high-end finishes, it's the
+            ideal retreat for small families or couples seeking a touch of
+            elegance amidst the excitement.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">ac_unit</span>
+              </div>
+              <span class="text-label-md font-label-md">Climate Control</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">wifi</span>
+              </div>
+              <span class="text-label-md font-label-md">Fiber Wi-Fi</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">king_bed</span>
+              </div>
+              <span class="text-label-md font-label-md">King Size Bed</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">tv</span>
+              </div>
+              <span class="text-label-md font-label-md">Smart TV</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">balcony</span>
+              </div>
+              <span class="text-label-md font-label-md">Private Balcony</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">square_foot</span>
+              </div>
+              <span class="text-label-md font-label-md">12x20 sq.ft.</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">bathroom</span>
+              </div>
+              <span class="text-label-md font-label-md">Attached Bath</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">kitchen</span>
+              </div>
+              <span class="text-label-md font-label-md">Refrigerator</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined">pool</span>
+              </div>
+              <span class="text-label-md font-label-md">Pool Access</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-6 pt-8 border-t border-outline-variant/30">
+            <a href="booking.html"
+              class="bg-primary text-white px-10 py-4 rounded-full font-bold shadow-lg shadow-primary/30 hover:scale-105 transition-transform text-center block">
+              Book This Room
+            </a>
+            <a class="font-bold text-primary flex items-center gap-2 hover:underline" href="#">
+              View Full Policy
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Other Accommodations Section -->
+    <section class="bg-surface-container-low py-section-gap-desktop">
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div class="max-w-xl">
+            <h2 class="font-fun text-headline-xl text-primary mb-4">
+              Explore Other Accommodations
+            </h2>
+            <p class="text-body-lg text-on-surface-variant">
+              From adventurous pods to grand family villas, we have the
+              perfect space for every type of traveler.
+            </p>
+          </div>
+          <a class="px-6 py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary hover:text-white transition-all"
+            href="#">View All Rooms</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Thrill-Seeker Suite -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover-lift flex flex-col">
+            <div class="relative h-64 overflow-hidden">
+              <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                data-alt="A playful and energetic hotel suite with amusement park-inspired decor, featuring colorful wall murals and roller coaster motifs. The room is spacious with multiple beds, perfect for groups or large families, featuring bright primary colors like blue, yellow, and red. The lighting is festive and warm, capturing the joyful spirit of ThrillQuest theme park."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBe4rki9mkvmRj0XUBpU-VFI1BPrh4Ji22pD7F_BPKFOTBJi3yigmmyoHmnbVH-tahwADnrHPoDE8bkixdcfgnaw7_UFE72YID8-7dDNLNrDfWewo2DwJyP6nicEcYxdaFtUAFsUlW60R8ifLbpyhwPK3mTrHxqCtc5B-5YFFo9_E0fCDxI5xPAt5AgczFouNbbN79GI2_aBADLmc_9mf6l2APqGnNd5I3HIbqbIN1lXI_rAIvmHQ" />
+              <div
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-label-md font-bold text-primary shadow">
+                From $299/night
+              </div>
+            </div>
+            <div class="p-8 space-y-4 flex-1 flex flex-col">
+              <h3 class="font-fun text-headline-md">Thrill-Seeker Suite</h3>
+              <p class="text-on-surface-variant">
+                Perfect for larger groups with themed decor that keeps the
+                park energy alive all night long.
+              </p>
+              <div class="pt-4 flex items-center gap-4 text-on-surface-variant text-label-md">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">group</span>
+                  4-6</span>
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">bed</span>
+                  3 Queen</span>
+              </div>
+              <div class="mt-auto pt-6">
+                <a href="booking.html"
+                  class="w-full py-3 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-center block">
+                  Select Suite
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Solo Adventurer Pod -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover-lift flex flex-col">
+            <div class="relative h-64 overflow-hidden">
+              <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                data-alt="A sleek, futuristic, and highly efficient micro-hotel pod room designed for a single traveler. The interior features smart lighting, a compact high-tech workspace, and a comfortable ergonomic bed integrated into a minimalist white and navy blue cabin. Large window provides a unique eye-level view of the theme park's architectural landmarks at night."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVsi8xSd7KMOOKkwZ2XKPF9cZIuz3Z8pDIunGQhLyW7FgtXbqAzGJ0i-GWeelNtfRWY3PqGGbY5d-wkqRyoAqjKT7aUhHroOldAfu9nSnaKPAV57JeMcGAQgeHgyRHD2uDPKf2xbfZRG5X6_z6UzOxsVkMTGpVErjsgH_N2pSqphoysRX6BBOm3J_Y6nY3NKnxC6GYcdY5PZRHC41V3qgLx_KfBoLVsEiHoDswpP2lfpBtMt0xFik" />
+              <div
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-label-md font-bold text-primary shadow">
+                From $99/night
+              </div>
+            </div>
+            <div class="p-8 space-y-4 flex-1 flex flex-col">
+              <h3 class="font-fun text-headline-md">Solo Adventurer Pod</h3>
+              <p class="text-on-surface-variant">
+                Efficient, modern design for the focused visitor. Everything
+                you need for a quick recharge between rides.
+              </p>
+              <div class="pt-4 flex items-center gap-4 text-on-surface-variant text-label-md">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">person</span>
+                  1</span>
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">bolt</span>
+                  Smart Tech</span>
+              </div>
+              <div class="mt-auto pt-6">
+                <a href="booking.html"
+                  class="w-full py-3 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-center block">
+                  Select Pod
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Grand Horizon Villa -->
+          <div class="group bg-white rounded-3xl overflow-hidden shadow-md hover-lift flex flex-col">
+            <div class="relative h-64 overflow-hidden">
+              <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                data-alt="An ultra-luxurious private villa featuring a massive private terrace with an infinity edge pool and sweeping skyline views of the amusement park and surrounding landscape. The interior is opulent with marble floors, warm wood accents, and floor-to-ceiling glass walls. The lighting is soft and golden, suggesting a high-end luxury vacation experience at sunset."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSletjsguRBYhUc9Jt1F0tMcvnKG-FDGgIANPReUiK_ff0GE2s5t6BMfK-8CqvPOADDI3-FZyaTXxNjLNLL1I1776zZvG5ksejdCtFg2PC6pBgaGqG1H8IsQcIA-dYngwGzqazuEsyQ6vkwfvlGVqOI6G7In_2WysOq7svjThNZ43-cMheBb_d0sQjPQQsAcOkkGqzwCHPvZxE5X5hM7_Fp-47UJYWJyOC0smhwYoePbqJBi8sPuU" />
+              <div
+                class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-label-md font-bold text-primary shadow">
+                From $549/night
+              </div>
+            </div>
+            <div class="p-8 space-y-4 flex-1 flex flex-col">
+              <h3 class="font-fun text-headline-md">Grand Horizon Villa</h3>
+              <p class="text-on-surface-variant">
+                The pinnacle of luxury with private balcony and skyline views.
+                Indulge in unparalleled comfort and exclusivity.
+              </p>
+              <div class="pt-4 flex items-center gap-4 text-on-surface-variant text-label-md">
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">pool</span>
+                  Private Pool</span>
+                <span class="flex items-center gap-1"><span class="material-symbols-outlined scale-75">visibility</span>
+                  Skyline View</span>
+              </div>
+              <div class="mt-auto pt-6">
+                <a href="booking.html"
+                  class="w-full py-3 rounded-full border border-primary text-primary font-bold hover:bg-primary hover:text-white transition-all text-center block">
+                  Select Villa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Newsletter / CTA -->
+    <section class="py-section-gap-desktop px-gutter">
+      <div
+        class="max-w-container-max mx-auto bg-primary rounded-[3rem] p-12 lg:p-24 relative overflow-hidden text-center text-white">
+        <!-- Abstract decorative element -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-secondary/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto space-y-8">
+          <h2 class="font-fun text-headline-xl">
+            Join the ThrillQuest Insiders
+          </h2>
+          <p class="text-body-lg text-white/80">
+            Be the first to hear about new attractions, hotel seasonal
+            discounts, and exclusive park events delivered straight to your
+            inbox.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+            <input
+              class="flex-1 px-6 py-4 rounded-full text-on-background bg-white focus:outline-none focus:ring-4 focus:ring-secondary/50"
+              placeholder="Enter your email" type="email" />
+            <button
+              class="bg-secondary text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-secondary/30 hover:scale-105 active:scale-95 transition-all"
+              type="submit">
+              Subscribe Now
+            </button>
+          </form>
+          <p class="text-label-md text-white/60">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-surface-container-lowest dark:bg-inverse-surface mt-20">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter py-section-gap-desktop max-w-container-max mx-auto">
+      <div class="space-y-6">
+        <a href="index.html"
+          class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed block hover:scale-105 transition-transform duration-200">
+          ThrillQuest
+        </a>
+        <p class="text-on-surface-variant font-body-md text-body-md">
+          Creating memories and heart-pounding adventures since 1995. The
+          world's premier fun destination for families and thrill seekers.
+        </p>
+        <div class="flex gap-4">
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+            href="#"><span class="material-symbols-outlined">face_nod</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+            href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+          <a class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+            href="#"><span class="material-symbols-outlined">play_circle</span></a>
+        </div>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold text-primary uppercase tracking-widest text-label-md">
+          Explore
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="theme.html">Theme Zones</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="rides.html">Rides &
+              Rollercoasters</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Dining & Snacks</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Events Calendar</a>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold text-primary uppercase tracking-widest text-label-md">
+          Support
+        </h4>
+        <ul class="space-y-4">
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Safety Guide</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Accessibility</a>
+          </li>
+          <li>
+            <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#">Career</a>
+          </li>
+        </ul>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold text-primary uppercase tracking-widest text-label-md">
+          Contact Us
+        </h4>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary">location_on</span>
+            123 Adventure Way, Fun City, FL 33101
+          </li>
+          <li class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary">phone</span>
+            +1 (800) THRILL-Q
+          </li>
+          <li class="flex items-center gap-3 text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            hello@thrillquest.com
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-outline-variant/30 py-8 px-gutter max-w-container-max mx-auto text-center">
+      <p class="text-on-surface-variant font-body-md text-body-md opacity-60">
+        © 2024 ThrillQuest Amusement Parks. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script>
+    // Simple interactive hover effect for cards
+    document.querySelectorAll(".group").forEach((card) => {
+      card.addEventListener("mouseenter", () => {
+        // Potential for adding micro-interaction sounds or cursor changes
+      });
+    });
+
+    // Sticky nav scroll behavior
+    window.addEventListener("scroll", () => {
+      const nav = document.querySelector("nav");
+      if (window.scrollY > 50) {
+        nav.classList.add("shadow-md");
+      } else {
+        nav.classList.remove("shadow-md");
+      }
+    });
+  </script>
+</body>
+
+</html>
