@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html class="light" lang="en">
+<html class="light overflow-x-hidden" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -181,15 +181,15 @@
   >
     <!-- TopNavBar -->
     <nav
-      class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4"
+      class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4 transition-all duration-300"
     >
       <div
         class="flex justify-between items-center max-w-container-max mx-auto gap-4"
       >
         <!-- Logo Pill -->
         <a href="index.html"
-          class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-6 py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
-          <img alt="ThrillQuest Logo" class="h-8 w-auto object-contain"
+          class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-4 py-2.5 md:px-6 md:py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
+          <img alt="ThrillQuest Logo" class="h-10 md:h-8 w-auto object-contain"
             src="https://lh3.googleusercontent.com/aida/AP1WRLu8tEOHoCUoBoTONbVcQzWKEN5SVUZwZOs1swRl_RPrluk2O8lNLafoA7GXPuR5ZYIkilfpNsXRnAh81kch1SXsw9M1yaixLNtrur88yadIsCMV8KBFfrihAGkC0VfJz9YkhOBQiWFBoTf4vB0SdcEb2MF0kLu4sbpmMGb37nq70haP6bodB69KHpQoWa5Xcc4yR6tNBNrENE791L8UwhzOMnsaYiYHhjUuZ62lGqvqwxSmW1LTXjukKg" />
           <span class="font-headline-md text-xl font-bold text-primary hidden md:block">ThrillQuest</span>
         </a>
@@ -217,7 +217,28 @@
             class="bg-secondary-container hover:bg-secondary text-white px-6 py-2 rounded-full font-label-md text-xs uppercase font-bold shadow-lg active:scale-95 transition-all text-center">
             Book Now
           </a>
+          
+          <!-- Hamburger Menu Button -->
+          <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary/20 active:scale-95 transition-all focus:outline-none">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+          </button>
         </div>
+      </div>
+
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 mt-4 bg-white/95 backdrop-blur-md border border-outline-variant/30 rounded-2xl p-6 shadow-xl transition-all duration-300">
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a class="text-primary font-bold py-2 border-b border-outline-variant/10" href="about.html">About Us</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="theme.html">Themes</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="rides.html">Rides</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="room.html">Rooms</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2" href="booking.html">Booking Now</a>
+        
+        <!-- Mobile Login Button -->
+        <button class="lg:hidden mt-4 w-full py-3 bg-surface-container-high hover:bg-surface-container text-on-surface-variant font-label-md rounded-xl font-bold uppercase text-xs transition-colors">
+          Login
+        </button>
       </div>
     </nav>
     <!-- Main Content -->
@@ -238,7 +259,7 @@
         </div>
         <div class="relative z-20 px-gutter max-w-container-max mx-auto w-full">
           <div class="max-w-2xl text-white drop-shadow-lg">
-            <h1 class="font-atma text-[80px] md:text-[120px] leading-none mb-4">
+            <h1 class="font-atma text-[48px] sm:text-[80px] md:text-[120px] leading-none mb-4">
               Our Story
             </h1>
             <p
@@ -253,7 +274,7 @@
           class="absolute bottom-0 left-0 w-full leading-[0] fill-background"
         >
           <svg
-            class="relative block w-full h-24"
+            class="relative block w-full h-12 sm:h-20 md:h-24"
             preserveaspectratio="none"
             viewbox="0 0 1200 120"
           >
@@ -265,7 +286,7 @@
       </section>
       <!-- Introduction Section -->
       <section
-        class="px-gutter py-section-gap-desktop max-w-container-max mx-auto"
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto overflow-hidden"
       >
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div class="space-y-8">
@@ -274,7 +295,7 @@
             >
               Great Place and Great Fun
             </div>
-            <h2 class="font-atma text-[56px] leading-[1.1] text-primary">
+            <h2 class="font-atma text-[32px] sm:text-[48px] md:text-[56px] leading-[1.1] text-primary">
               <span class="text-secondary">Amazing</span> Fun World
             </h2>
             <div
@@ -324,10 +345,10 @@
             </div>
             <!-- Badge -->
             <div
-              class="absolute -bottom-6 -left-6 bg-action-yellow text-on-secondary-container px-8 py-6 rounded-2xl shadow-xl -rotate-6"
+              class="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 bg-action-yellow text-on-secondary-container px-4 py-3 sm:px-8 sm:py-6 rounded-2xl shadow-xl -rotate-6"
             >
-              <div class="font-atma text-headline-xl leading-none">Est.</div>
-              <div class="font-display-lg text-[64px] leading-none font-black">
+              <div class="font-atma text-lg sm:text-headline-xl leading-none">Est.</div>
+              <div class="font-display-lg text-4xl sm:text-[64px] leading-none font-black">
                 1960
               </div>
             </div>
@@ -386,7 +407,7 @@
       </section>
       <!-- Core Features Grid -->
       <section
-        class="px-gutter py-section-gap-desktop max-w-container-max mx-auto"
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
       >
         <div class="text-center mb-16 space-y-4">
           <h2 class="font-atma text-[48px] text-on-surface">
@@ -473,19 +494,19 @@
         </div>
       </section>
       <!-- Team & Culture -->
-      <section class="px-gutter py-section-gap-desktop bg-surface-soft">
+      <section class="px-gutter py-section-gap-mobile md:py-section-gap-desktop bg-surface-soft">
         <div class="max-w-container-max mx-auto">
           <div class="flex flex-col md:flex-row gap-12 items-center">
             <div class="w-full md:w-1/2 grid grid-cols-2 gap-4">
               <div class="space-y-4">
-                <div class="rounded-2xl overflow-hidden h-64">
+                <div class="rounded-2xl overflow-hidden h-40 sm:h-56 md:h-64">
                   <img
                     class="w-full h-full object-cover"
                     data-alt="A candid, warm photograph of a professional amusement park safety inspector smiling and giving a thumbs up. He wears a branded uniform. The background shows part of a clean, well-maintained ride. The lighting is bright and inviting, conveying a sense of safety and professional care in a modern park setting."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz6KSDQ26oPII2Y9t6LzYlAPTtXaNQu-gPZVuYo4FcPk__bUU0-HxtLOhZYJA9nHO49gyfDeyiyYXIwkuz5bQfyYJUFs2QxPl6kWIHhTvTlZlfX2smRmqHDtAJkYaoZ3H4m950BppahjQFqr2fDOo4-paIGDhu5VietpKrglNRsT4Aa2w5vCUsY70I02DcwfEAzxsx5kbvk2nvtsOdm5lF3k75_AKtPvE7Imy9J3HgrQVZ8Ql3ZQM"
                   />
                 </div>
-                <div class="rounded-2xl overflow-hidden h-48">
+                <div class="rounded-2xl overflow-hidden h-32 sm:h-40 md:h-48">
                   <img
                     class="w-full h-full object-cover"
                     data-alt="A group of diverse, smiling park employees in colorful ThrillQuest staff uniforms waving cheerfully at the camera. They are standing near a park entrance with balloons. The mood is joyful, welcoming, and high-energy, emphasizing the friendly culture of the 'magic makers'."
@@ -494,14 +515,14 @@
                 </div>
               </div>
               <div class="space-y-4 pt-8">
-                <div class="rounded-2xl overflow-hidden h-48">
+                <div class="rounded-2xl overflow-hidden h-32 sm:h-40 md:h-48">
                   <img
                     class="w-full h-full object-cover"
                     data-alt="Close-up of a chef in a clean white kitchen preparing a vibrant, artistic gourmet dish for the park's restaurant. The food is colorful and whimsical, fitting the amusement park theme. The style is high-end culinary photography with soft bokeh."
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZEu6XSE364Xc_ulJkX1LECXCpz_u_1CFxWoD3-jxx6vzcrHW32JwDT0OISymwLs5rqQKRCJK5lSEZx4ErHA155GS4MVrpszMdlLfZlq_mwiaZDZJF7os4zQwQ7Pm_R5c8eYWcnndLhwrUT75fAkJBx1y7H6yecMJ0-MjFHf1RKDizpmZ_7gGXuXj7it_VFUyEXEhFFcnl_Tn_XXeAoJMEOz_Svp5FvEDscb4ZA-sieKdPeuiUaPc"
                   />
                 </div>
-                <div class="rounded-2xl overflow-hidden h-64">
+                <div class="rounded-2xl overflow-hidden h-40 sm:h-56 md:h-64">
                   <img
                     class="w-full h-full object-cover"
                     data-alt="A wide shot of a luxury hotel lobby within the park. The interior design is playful yet sophisticated, with curved furniture and a primary color palette. It looks bright, clean, and modern, reflecting the high-end hospitality side of the business."
@@ -553,7 +574,7 @@
       </section>
       <!-- CTA Section -->
       <section
-        class="px-gutter py-section-gap-desktop max-w-container-max mx-auto"
+        class="px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
       >
         <div
           class="bg-primary rounded-[48px] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl"
@@ -573,7 +594,7 @@
             ></div>
           </div>
           <div class="relative z-10 max-w-3xl mx-auto space-y-8">
-            <h2 class="font-atma text-[64px] md:text-[88px] leading-tight">
+            <h2 class="font-atma text-[32px] sm:text-[54px] md:text-[64px] lg:text-[88px] leading-tight">
               Ready for the adventure of a lifetime?
             </h2>
             <p class="font-headline-md text-headline-md text-white/80">
@@ -597,10 +618,10 @@
     </main>
     <!-- Footer -->
     <footer
-      class="bg-surface-container-lowest dark:bg-inverse-surface mt-section-gap-desktop"
+      class="bg-surface-container-lowest dark:bg-inverse-surface mt-section-gap-mobile md:mt-section-gap-desktop"
     >
       <div
-        class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter py-section-gap-desktop max-w-container-max mx-auto"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto"
       >
         <div class="space-y-6">
           <a
@@ -703,6 +724,34 @@
       </div>
     </footer>
     <script>
+      // Scroll and Mobile Menu Interactions
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 50) {
+          nav.classList.add("shadow-lg", "py-2");
+          nav.classList.remove("py-4");
+        } else {
+          nav.classList.remove("shadow-lg", "py-2");
+          nav.classList.add("py-4");
+        }
+      });
+
+      const menuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuIcon = document.getElementById("menu-icon");
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          mobileMenu.classList.toggle("flex");
+          if (mobileMenu.classList.contains("hidden")) {
+            menuIcon.textContent = "menu";
+          } else {
+            menuIcon.textContent = "close";
+          }
+        });
+      }
+
       // Smooth scroll implementation or simple micro-interactions
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {

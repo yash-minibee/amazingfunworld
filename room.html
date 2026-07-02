@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html class="scroll-smooth" lang="en">
+<html class="scroll-smooth overflow-x-hidden" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -177,45 +177,64 @@
 
 <body
   class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
-  <!-- TopNavBar -->
-  <nav class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4">
-    <div class="flex justify-between items-center max-w-container-max mx-auto gap-4">
-      <!-- Logo Pill -->
-      <a href="index.html"
-        class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-6 py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
-        <img alt="ThrillQuest Logo" class="h-8 w-auto object-contain"
-          src="https://lh3.googleusercontent.com/aida/AP1WRLu8tEOHoCUoBoTONbVcQzWKEN5SVUZwZOs1swRl_RPrluk2O8lNLafoA7GXPuR5ZYIkilfpNsXRnAh81kch1SXsw9M1yaixLNtrur88yadIsCMV8KBFfrihAGkC0VfJz9YkhOBQiWFBoTf4vB0SdcEb2MF0kLu4sbpmMGb37nq70haP6bodB69KHpQoWa5Xcc4yR6tNBNrENE791L8UwhzOMnsaYiYHhjUuZ62lGqvqwxSmW1LTXjukKg" />
-        <span class="font-headline-md text-xl font-bold text-primary hidden md:block">ThrillQuest</span>
-      </a>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 shadow-sm px-gutter py-4 transition-all duration-300">
+      <div class="flex justify-between items-center max-w-container-max mx-auto gap-4">
+        <!-- Logo Pill -->
+        <a href="index.html"
+          class="flex items-center gap-3 bg-white/20 backdrop-blur-lg border border-white/20 px-4 py-2.5 md:px-6 md:py-3 rounded-full shadow-sm hover:scale-105 transition-transform duration-200 cursor-pointer">
+          <img alt="ThrillQuest Logo" class="h-10 md:h-8 w-auto object-contain"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLu8tEOHoCUoBoTONbVcQzWKEN5SVUZwZOs1swRl_RPrluk2O8lNLafoA7GXPuR5ZYIkilfpNsXRnAh81kch1SXsw9M1yaixLNtrur88yadIsCMV8KBFfrihAGkC0VfJz9YkhOBQiWFBoTf4vB0SdcEb2MF0kLu4sbpmMGb37nq70haP6bodB69KHpQoWa5Xcc4yR6tNBNrENE791L8UwhzOMnsaYiYHhjUuZ62lGqvqwxSmW1LTXjukKg" />
+          <span class="font-headline-md text-xl font-bold text-primary hidden md:block">ThrillQuest</span>
+        </a>
 
-      <!-- Links Pill -->
-      <div
-        class="hidden md:flex items-center gap-6 bg-white/20 backdrop-blur-lg border border-white/20 px-8 py-3 rounded-full shadow-sm font-label-md text-xs uppercase tracking-wider">
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="about.html">About Us</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="theme.html">Themes</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="rides.html">Rides</a>
-        <a class="text-primary font-bold" href="room.html">Rooms</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold"
-          href="contact.html">Contact</a>
-        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="booking.html">Booking
-          Now</a>
+        <!-- Links Pill -->
+        <div
+          class="hidden md:flex items-center gap-6 bg-white/20 backdrop-blur-lg border border-white/20 px-8 py-3 rounded-full shadow-sm font-label-md text-xs uppercase tracking-wider">
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="index.html">Home</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="about.html">About Us</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="theme.html">Themes</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="rides.html">Rides</a>
+          <a class="text-primary font-bold" href="room.html">Rooms</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="contact.html">Contact</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-bold" href="booking.html">Booking Now</a>
+        </div>
+
+        <!-- CTA Pill -->
+        <div
+          class="flex items-center gap-2 bg-white/20 backdrop-blur-lg border border-white/20 p-1.5 rounded-full shadow-sm">
+          <button
+            class="hidden lg:block px-4 text-on-surface-variant font-label-md hover:text-primary transition-colors font-bold text-xs uppercase">
+            Login
+          </button>
+          <a href="booking.html"
+            class="bg-secondary-container hover:bg-secondary text-white px-6 py-2 rounded-full font-label-md text-xs uppercase font-bold shadow-lg active:scale-95 transition-all text-center">
+            Book Now
+          </a>
+          
+          <!-- Hamburger Menu Button -->
+          <button id="mobile-menu-toggle" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary/20 active:scale-95 transition-all focus:outline-none">
+            <span class="material-symbols-outlined" id="menu-icon">menu</span>
+          </button>
+        </div>
       </div>
 
-      <!-- CTA Pill -->
-      <div
-        class="flex items-center gap-2 bg-white/20 backdrop-blur-lg border border-white/20 p-1.5 rounded-full shadow-sm">
-        <button
-          class="hidden lg:block px-4 text-on-surface-variant font-label-md hover:text-primary transition-colors font-bold text-xs uppercase">
+      <!-- Mobile Menu Dropdown -->
+      <div id="mobile-menu" class="hidden md:hidden flex-col gap-3 mt-4 bg-white/95 backdrop-blur-md border border-outline-variant/30 rounded-2xl p-6 shadow-xl transition-all duration-300">
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="about.html">About Us</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="theme.html">Themes</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="rides.html">Rides</a>
+        <a class="text-primary font-bold py-2 border-b border-outline-variant/10" href="room.html">Rooms</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2 border-b border-outline-variant/10" href="contact.html">Contact</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-bold py-2" href="booking.html">Booking Now</a>
+        
+        <!-- Mobile Login Button -->
+        <button class="lg:hidden mt-4 w-full py-3 bg-surface-container-high hover:bg-surface-container text-on-surface-variant font-label-md rounded-xl font-bold uppercase text-xs transition-colors">
           Login
         </button>
-        <a href="booking.html"
-          class="bg-secondary-container hover:bg-secondary text-white px-6 py-2 rounded-full font-label-md text-xs uppercase font-bold shadow-lg active:scale-95 transition-all text-center">
-          Book Now
-        </a>
       </div>
-    </div>
-  </nav>
+    </nav>
   <main class="">
     <!-- Hero Section -->
     <section class="relative h-[90vh] min-h-[500px] flex items-center overflow-hidden">
@@ -229,7 +248,7 @@
           <span
             class="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-white font-label-md text-label-md mb-6 uppercase tracking-widest">Premium
             Living</span>
-          <h1 class="font-fun text-display-lg leading-tight mb-6 drop-shadow-lg">
+          <h1 class="font-fun text-4xl sm:text-6xl lg:text-display-lg leading-tight mb-6 drop-shadow-lg">
             Luxury Stays at the Park
           </h1>
           <p class="font-body-lg text-body-lg mb-8 text-white/90 leading-relaxed max-w-lg">
@@ -289,14 +308,14 @@
           </div>
         </div>
         <a href="booking.html"
-          class="w-full lg:w-auto px-12 py-5 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 flex items-center justify-center gap-2 min-w-[200px] text-center">
+          class="w-full lg:w-auto px-12 py-5 bg-secondary text-white font-bold rounded-xl hover:bg-secondary/90 transition-all shadow-lg shadow-secondary/20 flex items-center justify-center gap-2 min-w-[200px] text-center self-stretch lg:self-auto">
           <span class="material-symbols-outlined">search</span>
           Check Availability
         </a>
       </div>
     </div>
     <!-- Featured Room Detail -->
-    <section class="py-section-gap-desktop px-gutter max-w-container-max mx-auto">
+    <section class="py-section-gap-mobile md:py-section-gap-desktop px-gutter max-w-container-max mx-auto">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="relative group">
           <div
@@ -327,7 +346,7 @@
               Double Bed A/C Room
             </h2>
             <div class="flex items-end gap-3">
-              <span class="text-display-lg font-bold text-on-background leading-none tracking-tighter">$189</span>
+              <span class="text-4xl sm:text-6xl lg:text-display-lg font-bold text-on-background leading-none tracking-tighter">$189</span>
               <span class="text-body-lg text-on-surface-variant pb-2">/ night</span>
             </div>
           </div>
@@ -407,7 +426,7 @@
       </div>
     </section>
     <!-- Other Accommodations Section -->
-    <section class="bg-surface-container-low py-section-gap-desktop">
+    <section class="bg-surface-container-low py-section-gap-mobile md:py-section-gap-desktop">
       <div class="max-w-container-max mx-auto px-gutter">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div class="max-w-xl">
@@ -557,8 +576,8 @@
     </section>
   </main>
   <!-- Footer -->
-  <footer class="bg-surface-container-lowest dark:bg-inverse-surface mt-20">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-gutter py-section-gap-desktop max-w-container-max mx-auto">
+  <footer class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant/30">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 px-gutter py-section-gap-mobile md:py-section-gap-desktop max-w-container-max mx-auto">
       <div class="space-y-6">
         <a href="index.html"
           class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed block hover:scale-105 transition-transform duration-200">
@@ -646,22 +665,33 @@
     </div>
   </footer>
   <script>
-    // Simple interactive hover effect for cards
-    document.querySelectorAll(".group").forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        // Potential for adding micro-interaction sounds or cursor changes
-      });
-    });
-
-    // Sticky nav scroll behavior
+    // Scroll and Mobile Menu Interactions
     window.addEventListener("scroll", () => {
       const nav = document.querySelector("nav");
       if (window.scrollY > 50) {
-        nav.classList.add("shadow-md");
+        nav.classList.add("shadow-lg", "py-2");
+        nav.classList.remove("py-4");
       } else {
-        nav.classList.remove("shadow-md");
+        nav.classList.remove("shadow-lg", "py-2");
+        nav.classList.add("py-4");
       }
     });
+
+    const menuToggle = document.getElementById("mobile-menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+        if (mobileMenu.classList.contains("hidden")) {
+          menuIcon.textContent = "menu";
+        } else {
+          menuIcon.textContent = "close";
+        }
+      });
+    }
   </script>
 </body>
 
